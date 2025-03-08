@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model FoodOrderingApp.Models.Order
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Thank you, @Model.CustomerName! Your order has been placed successfully.</p>
+    <h2>Ordered Items:</h2>
+    <ul>
+        @foreach (var item in Model.OrderedItems)
+        {
+            <li>@item.Name - $@item.Price</li>
+        }
+    </ul>
+    <p>Total Amount: $@Model.TotalAmount</p>
+</body>
+</html>

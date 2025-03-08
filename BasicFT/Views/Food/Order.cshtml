@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model FoodOrderingApp.Models.Order
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place an Order</title>
+</head>
+<body>
+    <h1>Place Your Order</h1>
+    <form asp-action="Order" method="post">
+        <label for="CustomerName">Name:</label>
+        <input type="text" id="CustomerName" name="CustomerName" required /><br />
+
+        <label for="FoodItems">Select Food Items:</label>
+        <select multiple id="FoodItems" name="OrderedItems">
+            <option value="1">Pizza - $12.99</option>
+            <option value="2">Burger - $8.99</option>
+            <option value="3">Pasta - $10.99</option>
+        </select><br />
+
+        <button type="submit">Submit Order</button>
+    </form>
+</body>
+</html>

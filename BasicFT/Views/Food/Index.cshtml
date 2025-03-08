@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model IEnumerable<FoodOrderingApp.Models.FoodItem>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Menu</title>
+</head>
+<body>
+    <h1>Food Menu</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a href="@Url.Action("Order", "Food", new { id = item.Id })">Order</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
